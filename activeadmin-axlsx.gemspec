@@ -17,9 +17,10 @@ Gem::Specification.new do |s|
   s.test_files  = `git ls-files -- {spec}/*`.split("\n")
   s.test_files  = Dir.glob("{spec/**/*}")
 
-  s.add_runtime_dependency 'activeadmin', "~> 0.6.0"
-  s.add_runtime_dependency 'axlsx'
+  s.add_runtime_dependency 'activeadmin'
+  s.add_runtime_dependency 'axlsx', '~> 2.0.1'
+  s.add_runtime_dependency 'zip-zip'
 
-  s.required_ruby_version = '>= 1.9.2'
+  s.required_ruby_version = '>= 2.1'
   s.require_path = 'lib'
 end

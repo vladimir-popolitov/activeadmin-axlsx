@@ -202,8 +202,11 @@ module ActiveAdmin
       end
 
       def in_scope(resource, column)
-        return true unless column.name.is_a?(Symbol)
-        resource.respond_to?(column.name)
+        if column.data.is_a?(Proc)
+          true
+        else
+          resource.respond_to?(column.name)
+        end
       end
 
       def sheet
